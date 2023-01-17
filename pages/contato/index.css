@@ -1,0 +1,44 @@
+main
+{
+    text-align: center;
+    background: url('../../assets/img/footer_bk.jfif');
+}
+
+.container-form
+{
+    display: inline-block;
+    padding: 20px;
+    width: 50%;
+}
+
+form
+{
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+form fieldset
+{
+    display: grid;
+}
+
+form input, form textarea, form button
+{
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+button:hover
+{
+    cursor: pointer;
+    transition: 1s ease;
+    background: #c95B0C;
+}

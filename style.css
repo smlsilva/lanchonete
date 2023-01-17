@@ -1,0 +1,49 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+main
+{
+    padding: 10px;
+    background: url('./assets/img/background.jpg');
+    text-align: center;
+}
+
+.cardapios-restaurante > h2
+{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.cardapios-restaurante
+{
+    display: inline-block;
+    margin: 50px 0;
+}
+
+.cardapios-restaurante ul {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    background: #ff0;
+    margin: 20px;
+    vertical-align: top;
+    transition: 1s all;
+}
+
+.cardapios-restaurante ul:hover {
+    transition: 1s all;
+    transform: scale(1.2);
+    cursor: pointer;
+    background: #ffa;
+}

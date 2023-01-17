@@ -1,0 +1,28 @@
+footer
+{
+    text-align: center;
+    padding: 50px 0;
+    background: #b62203;
+}
+
+.sociais, .direitos {
+    display: inline-block;
+}
+
+.sociais {
+    padding: 0 50px;
+    margin: 0 50px;
+    border-right: 1px solid;
+}
+
+.direitos
+{
+    vertical-align: top;
+}
+
+.direitos > p
+{
+    display: inline-block;
+    vertical-align: top;
+    margin: 50px 0 0 0;
+}
