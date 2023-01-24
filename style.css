@@ -5,29 +5,30 @@
 body
 {
     overflow-x: hidden;
+    background-color: #c95B0C;
 }
 
-main
+.cardapios-restaurante > h2, .personalizar > h2
 {
-    padding: 10px;
-    background: url('./assets/img/background.jpg');
-    text-align: center;
-}
-
-.cardapios-restaurante > h2
-{
+    font-family: cursive;
     font-size: 30px;
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
+    margin: 0 0 0 50px;
 }
 
 .cardapios-restaurante
 {
     display: inline-block;
     margin: 50px 0;
+    display: none;
 }
 
-.cardapios-restaurante ul {
+.container-lanches {
+    text-align: center;
+}
+
+.container-lanches ul {
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
@@ -46,4 +47,57 @@ main
     transform: scale(1.2);
     cursor: pointer;
     background: #ffa;
+}
+
+.personalizar {
+    margin: 50px 0;
+}
+
+.informations {
+    margin: 50px;
+    padding: 50px;
+    border: 1px solid #000;
+}
+
+.ingredientes, .selecionado, .ingredient, .ingredient > p, .quantidade, .quantidade > p {
+    display: inline-block;
+}
+
+.selecionado
+{
+    width: 100%;
+    text-align: center;
+}
+
+.selecionado > p
+{
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.ingredientes {
+    text-align: center;
+    width: 100%;
+}
+
+.ingredient {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid;
+    margin: 10px;
+    text-align: left;
+}
+
+.ingredient > .nome, .quantidade {
+    width: 50%;
+}
+
+.quantidade {
+    text-align: end;
+}
+
+.quantidade > p {
+    margin: 0 20px;
+    cursor: pointer;
 }
