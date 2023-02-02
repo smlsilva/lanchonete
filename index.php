@@ -14,7 +14,7 @@
         ?>
         <main>
             <p id="cardapios"></p>
-            <div class="cardapios-restaurante">
+            <section class="cardapios-restaurante">
                 <h2>Lanches</h2>
                 <div class="container-lanches">
                     <ul onclick="personalizar(this)">
@@ -53,8 +53,8 @@
                         <li>Preço R$ 10,00</li>
                     </ul>
                 </div>
-            </div>
-            <div class="personalizar">
+            </section>
+            <section class="personalizar">
                 <h2>Personalizar</h2>
                 <div class="informations">
                     <div class="selecionado">
@@ -81,7 +81,7 @@
                         <p style="width: 50%; display: inline-block;">Total <p style="width: 50%; display: inline-block;">0</p></p>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
         <?php
             require_once('./components/footer/footer.php');

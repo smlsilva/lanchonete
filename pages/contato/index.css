@@ -19,7 +19,7 @@ form
     border-radius: 10px;
     font-size: 30px;
     font-weight: bold;
-    color: #fff;
+    background: #c95B0C;
 }
 
 form fieldset
@@ -40,5 +40,11 @@ button:hover
 {
     cursor: pointer;
     transition: 1s ease;
-    background: #c95B0C;
+    background: #ff0;
+}
+
+@media screen and (max-width: 560px) {
+    .container-form {
+        width: 100%;
+    }
 }

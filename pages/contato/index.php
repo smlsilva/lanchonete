@@ -26,7 +26,7 @@
             <div class="container-form">
                 <form action="" method="post">
                     <fieldset>
-                        <legend>FORMULÁRIO DE DÚVIDA</legend>
+                        <legend><img src="../../assets/img/logo.png" alt="lanchonete delícia" width="120px"></legend>
                         <input type="text" name="nome" placeholder="NOME" require>
                         <input type="text" name="sobrenome" placeholder="SOBRENOME" require>
                         <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" require>
