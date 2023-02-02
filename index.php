@@ -52,6 +52,11 @@
                         <li><img src="./assets/img/hot-dog.png" alt="Hot Dog" width="200px" height="200px"></li>
                         <li>Preço R$ 10,00</li>
                     </ul>
+                    <ul>
+                        <li><h2>Hot Dog</h2></li>
+                        <li><img src="./assets/img/hot-dog.png" alt="Hot Dog" width="200px" height="200px"></li>
+                        <li>Preço R$ 10,00</li>
+                    </ul>
                 </div>
             </section>
             <section class="personalizar">
