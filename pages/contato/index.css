@@ -2,13 +2,13 @@ main
 {
     text-align: center;
     background: url('../../assets/img/footer_bk.jfif');
+    padding: 150px 0 50px 0;   
 }
 
 .container-form
 {
-    display: inline-block;
-    padding: 20px;
-    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 form
@@ -20,6 +20,7 @@ form
     font-size: 30px;
     font-weight: bold;
     background: #c95B0C;
+    width: 50%;
 }
 
 form fieldset
@@ -44,7 +45,15 @@ button:hover
 }
 
 @media screen and (max-width: 560px) {
+    main {
+        padding: 150px 0 0;  
+    }
+
     .container-form {
+        width: 100%;
+    }
+
+    form {
         width: 100%;
     }
 }

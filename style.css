@@ -8,36 +8,42 @@ body
     background-color: #c95B0C;
 }
 
+main {
+    padding: 80px 0 0 0;
+}
+
+.cardapios-restaurante
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
 .cardapios-restaurante > h2, .personalizar > h2
 {
     font-family: cursive;
     font-size: 30px;
     color: #000;
     text-transform: uppercase;
-    margin: 0 0 0 50px;
-}
-
-.cardapios-restaurante
-{
-    display: inline-block;
-    margin: 50px 0;
 }
 
 .container-lanches {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 60px;
+    margin: 30px 0 0 0;
 }
 
 .container-lanches ul {
-    display: inline-block;
-    text-align: center;
     text-transform: uppercase;
+    text-align: center;
     font-weight: bold;
     padding: 20px;
     border: 2px solid;
     border-radius: 10px;
     background: #ff0;
-    margin: 20px 50px;
-    vertical-align: top;
     transition: 1s all;
 }
 
@@ -158,6 +164,10 @@ body
 }
 
 @media screen and (max-width: 600px) {
+
+    main {
+        padding: 150px 0 0 0;
+    }
 
     .informations {
         margin: 50px 0;
