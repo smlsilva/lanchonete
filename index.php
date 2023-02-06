@@ -13,7 +13,6 @@
             require_once('./components/header/header.php');
         ?>
         <main>
-            <p id="cardapios"></p>
             <section class="cardapios-restaurante">
                 <h2>Lanches</h2>
                 <div class="container-lanches">
@@ -57,27 +56,78 @@
             <section class="personalizar">
                 <h2>Personalizar</h2>
                 <div class="informations">
-                    <div class="selecionado">
+                    <div class="selecionado" id="selecionado">
                     </div>
                     <div class="ingredientes">
                         <div class="ingredient">
-                            <p class="nome">Tomate <div class="quantidade"><p onclick="subtrair(this)">-</p><p class="valor" id="tomate">0</p><p onclick="somar(this)">+</p><p>R$ 3,00</p></div></p>
+                            <p class="nome">Tomate 
+                                <div class="quantidade">
+                                    <div>
+                                        <p onclick="subtrair(this)">-</p>
+                                        <p class="valor" id="tomate">0</p>
+                                        <p onclick="somar(this)">+</p>
+                                        <p>R$ 3,00</p>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
                         <div class="ingredient">
-                            <p class="nome">Alface <div class="quantidade"><p onclick="subtrair(this)">-</p><p class="valor" id="alface">0</p><p onclick="somar(this)">+</p><p>R$ 3,00</p></div></p>
+                            <p class="nome">Alface 
+                                <div class="quantidade">
+                                    <div>
+                                        <p onclick="subtrair(this)">-</p>
+                                        <p class="valor" id="alface">0</p>
+                                        <p onclick="somar(this)">+</p>
+                                        <p>R$ 3,00</p>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
                         <div class="ingredient">
-                            <p class="nome">Hamburguer <div class="quantidade"><p onclick="subtrair(this)">-</p><p class="valor" id="hamburguer">0</p><p onclick="somar(this)">+</p><p>R$ 7,00</p></div></p>
+                            <p class="nome">Hamburguer 
+                                <div class="quantidade">
+                                    <div>
+                                        <p onclick="subtrair(this)">-</p>
+                                        <p class="valor" id="hamburguer">0</p>
+                                        <p onclick="somar(this)">+</p>
+                                        <p>R$ 7,00</p>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
                         <div class="ingredient">
-                            <p class="nome">Milho <div class="quantidade"><p onclick="subtrair(this)">-</p><p class="valor" id="milho">0</p><p onclick="somar(this)">+</p><p>R$ 5,00</p></div></p>
+                            <p class="nome">Milho 
+                                <div class="quantidade">
+                                    <div>
+                                        <p onclick="subtrair(this)">-</p>
+                                        <p class="valor" id="milho">0</p>
+                                        <p onclick="somar(this)">+</p>
+                                        <p>R$ 5,00</p>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
                         <div class="ingredient">
-                            <p class="nome">Azeite <div class="quantidade"><p onclick="subtrair(this)">-</p><p class="valor" id="azeite">0</p><p onclick="somar(this)">+</p><p>R$ 2,00</p></div></p>
+                            <p class="nome">Azeite 
+                                <div class="quantidade">
+                                    <div>
+                                        <p onclick="subtrair(this)">-</p>
+                                        <p class="valor" id="azeite">0</p>
+                                        <p onclick="somar(this)">+</p>
+                                        <p>R$ 2,00</p>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
-                        <p style="width: 50%; display: inline-block;">Total <p style="width: 50%; display: inline-block;">0</p></p>
+                        <div class="personalizacao-preco-total">
+                            <p>Total </p>
+                            <p id="total">0</p>
+                        </div>
                     </div>
-                    <button>Adicionar ao Carrinho</button>
+                    <div class="botoes-primarios">
+                        <button id="add-card">Adicionar ao Carrinho</button>
+                        <button id="btn-buy">Comprar</button>
+                    </div>
                 </div>
             </section>
         </main>
@@ -92,31 +142,69 @@
                 const preco = [e][0].children[2].innerText;
 
                 const content = "<p>" + nome + "</p>" + imag + "<p>" + preco + "</p>";
-                $(".selecionado").html(content);
+                $("#total")[0].innerText = parseFloat(preco[9] + preco[10] + '.' + preco[12] + preco[13]);
+                $("#selecionado").html(content);
+                $(".cardapios-restaurante").css('display', 'none');
                 $(".personalizar").css('display', 'block');
             }
 
             function subtrair(e)
             {
-                const id = $(e)[0].nextSibling.id;
+                const id = $(e)[0].parentNode.children[1].id;
                 let valor = parseInt($("#"+id)[0].outerText);
-            
+                
                 if(valor > 0)
                 {
-                    $("#"+id)[0].innerText = valor - 1
+                    let valorSubtraido = valor - 1;
+                    $("#"+id)[0].innerText = valorSubtraido
+
+                    let stringValorDoIngrediente = $(e)[0].parentElement.lastElementChild.outerText;
+                    let valorDoIngrediente = stringValorDoIngrediente[3] + "." +stringValorDoIngrediente[5] + stringValorDoIngrediente[6];
+
+                    let valorTotal = $("#total")[0].outerText;
+
+                    let valorSomado = (parseFloat(valorTotal) - (parseFloat(valor) * parseFloat(valorDoIngrediente)));
+                    
+                    $("#total")[0].innerText = valorSomado.toFixed(2)
                 }
             }
 
             function somar(e)
             {
                const id = $(e)[0].parentNode.children[1].id;
-               let valor = parseInt($("#"+id)[0].outerText);
-               $("#"+id)[0].innerText = valor + 1;
-               let stringPreco = $(e)[0].parentNode.firstElementChild.parentNode.lastElementChild.innerText;
-               let preco = stringPreco[3] + stringPreco[4] + stringPreco[5] + stringPreco[6];
+               let quantidade = parseInt($("#"+id)[0].outerText);
+               let quantidadeTotal = quantidade + 1;
 
-               console.log(parseFloat(preco))
+               $("#"+id)[0].innerText = quantidadeTotal;
+
+               let valorSomado = null;
+
+               let stringValorDoProduto = $("#selecionado")[0].lastElementChild.outerText;
+               let valorProduto = stringValorDoProduto[9] + stringValorDoProduto[10] + "." + stringValorDoProduto[12] + stringValorDoProduto[13];
+
+               let quantidadeDeIngredientesDisponiveis = $(".quantidade").length;
+               
+               for(let i = 0; i < quantidadeDeIngredientesDisponiveis; i++)
+               {
+                let selecionado = parseInt($(".quantidade")[i].lastElementChild.children[1].outerText);
+
+                if(selecionado > 0)
+                {
+                    let stringValorDoIngrediente = $(".quantidade")[i].lastElementChild.lastElementChild.outerText;
+                    let valorDoIngrediente = stringValorDoIngrediente[3] + "." + stringValorDoIngrediente[5] + stringValorDoIngrediente[6];
+                    valorSomado += (quantidadeTotal * parseFloat(valorDoIngrediente));
+                }
+               }     
+               total = parseFloat(valorSomado) + parseFloat(valorProduto)
+               $("#total")[0].innerText = total.toFixed(2)
             }
+
+            $("#cardapios").on('click', function()
+            {
+                $(".selecionado").html('');
+                $(".cardapios-restaurante").css('display', 'block');
+                $(".personalizar").css('display', 'none');
+            })
         </script>
     </body>
 </html>

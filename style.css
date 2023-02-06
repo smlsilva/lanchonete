@@ -21,7 +21,6 @@ body
 {
     display: inline-block;
     margin: 50px 0;
-    /* display: none; */
 }
 
 .container-lanches {
@@ -57,10 +56,11 @@ body
 .informations {
     margin: 50px;
     padding: 50px;
-    border: 1px solid #000;
+    border: 5px solid #000;
+    border-radius: 100px;
 }
 
-.ingredientes, .selecionado, .ingredient, .ingredient > p, .quantidade, .quantidade > p {
+.ingredientes, .selecionado, .ingredient, .ingredient > p, .quantidade, .quantidade p {
     display: inline-block;
 }
 
@@ -85,13 +85,54 @@ body
 .ingredient {
     width: 80%;
     padding: 10px;
-    border: 1px solid;
+    border: 2px solid;
     margin: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
     text-align: left;
+    background: #b62203;
 }
 
 .ingredient > .nome, .quantidade {
     width: 50%;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.personalizacao-preco-total > p {
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 20%;
+}
+
+.botoes-primarios {
+    text-align: center;
+}
+
+.botoes-primarios > button {
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #b62203;
+    cursor: pointer;
+    transition: 600ms;
+    width: 50%;
+    margin: 10px 0;
+}
+
+.botoes-primarios > button:first-child:hover {
+    background: #ff0;
+    box-shadow: 5px 5px;
+}
+
+.botoes-primarios > button:last-child:hover {
+    background: #0c0;
+    box-shadow: 5px 5px;
 }
 
 .quantidade {
@@ -99,6 +140,55 @@ body
 }
 
 .quantidade > p {
-    margin: 0 20px;
+    font-weight: bold;
+}
+
+.quantidade > div > p:last-child {
+    margin: 0 0 0 10px;
+    border-left: 1px solid;
+    padding: 0 0 0 10px;
+}
+
+.quantidade > div > p:first-child, .quantidade > div > p:nth-child(3) {
     cursor: pointer;
+}
+
+.valor {
+    margin: 0 50px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .informations {
+        margin: 50px 0;
+        padding: 50px;
+        border: 5px solid #000;
+        border-radius: 0;
+    }
+
+    .ingredient > .nome, .quantidade {
+        width: 100%;
+        text-align: center;
+    }
+
+    .quantidade > p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .quantidade > div {
+        text-align: center;
+        margin: 30px 0 0 0;
+    }
+
+    .quantidade > div > p:last-child {
+        width: 100%;
+        margin: 30px 0 0 0;
+        border-left: 0;
+        padding: 0;
+    }
+
+    .valor {
+        margin: 0 30px;
+    }
 }
