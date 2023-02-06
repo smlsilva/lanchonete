@@ -145,7 +145,7 @@
                 $("#total")[0].innerText = parseFloat(preco[9] + preco[10] + '.' + preco[12] + preco[13]);
                 $("#selecionado").html(content);
                 $(".cardapios-restaurante").css('display', 'none');
-                $(".personalizar").css('display', 'block');
+                $(".personalizar").css('display', 'flex');
             }
 
             function subtrair(e)
